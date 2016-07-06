@@ -14,7 +14,7 @@
         <img class="img-responsive" src="https://rudeboyy.files.wordpress.com/2014/05/beats-x-snarkitecture-01.jpg?w=350&h=200&crop=1" alt="">
         <div class="overlay">
            <h2>{{ item.title|capfirst }}</h2>
-           <a class="info" href="#">${{ item.amount }}</a>
+           <a class="info" href="{% url 'item_detail' item.id %}">${{ item.amount }}</a>
         </div>
     </div>
 </div>
