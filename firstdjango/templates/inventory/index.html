@@ -1,30 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section id="portfolio">
-        <div class="container-fluid">
-            <h2>Stocky</h2>
-            <hr class="sep">
-            <p>See whats in stock at our store!</p>
-            <div class="row">
-            {% for item in items %}
-                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".3s">
-                    <a class="portfolio-box" href="{% url 'item_detail' item.id %}" data-lightbox="image-1" data-title="Your caption">
-                        <img src="{{ item.image }}" class="img-responsive" alt="1">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{ item.title|capfirst }}
-                                </div>
-                                <div class="project-name">
-                                    ${{ item.amount }}
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
-            </div>
+<form action="#" id="login-form">
+  <div class="heading">
+  Stocky
+  <br>
+  See whats in stock at our store!
+  </div>
+</form>
+{% for item in items %}
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="width: 350px; height: 200px">
+    <div class="hovereffect">
+        <img class="img-responsive" src="https://rudeboyy.files.wordpress.com/2014/05/beats-x-snarkitecture-01.jpg?w=350&h=200&crop=1" alt="">
+        <div class="overlay">
+           <h2>{{ item.title|capfirst }}</h2>
+           <a class="info" href="#">${{ item.amount }}</a>
         </div>
-    </section>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
